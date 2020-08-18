@@ -1,22 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {Component} from 'react';
 import {useForm} from 'react-hook-form';
 import { StyleSheet, Text, TextInput, View, TouchableHighlight} from 'react-native';
 
-class signUpButton extends Component {
-  render(){
-    return (
-      <TouchableHighlight>
-          <View style={styles.button}>
-            <Text style={{color:'white',fontSize:14}}>Sign Up</Text>
-          </View>
-      </TouchableHighlight>
-    );
-  }  
+const signUp = () =>   {
+  return (
+    <TouchableHighlight>
+        <View style={styles.button}>
+          <Text style={{color:'white',fontSize:14}}>Sign Up</Text>
+        </View>
+    </TouchableHighlight>
+  );
 };
 
 
-export default function App() {
+function App() {
   return (
     <View style={styles.container}>
       <Text>Demo form</Text>
@@ -25,7 +23,8 @@ export default function App() {
         <TextInput placeholder="Email" style={styles.inputStyle}/>
         <TextInput placeholder="Password" style={styles.inputStyle} secureTextEntry={true} />
         <TextInput placeholder="Mobile Number" style={styles.inputStyle}/>
-        <signUpButton />
+        {/*  Component Inheritance Not working */}
+        {/* <signUp /> */}
         <TouchableHighlight>
           <View style={styles.button}>
             <Text style={{color:'white',fontSize:14}}>Sign Up</Text>
@@ -78,3 +77,6 @@ const styles = StyleSheet.create({
   
   
 });
+
+
+export default App;
