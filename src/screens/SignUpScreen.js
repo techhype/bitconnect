@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {Component} from 'react';
 import {useForm} from 'react-hook-form';
-import { StyleSheet, Text, TextInput, View, TouchableHighlight} from 'react-native';
+import { StyleSheet, Text, TextInput,Button, View, TouchableHighlight} from 'react-native';
 
 const signUp = () =>   {
   return (
@@ -13,7 +13,7 @@ const signUp = () =>   {
   );
 };
 
-const SignUp = () =>  {
+const SignUp = ({navigation}) =>  {
   return (
     <View style={styles.container}>
       <Text>Demo form</Text>
@@ -29,6 +29,7 @@ const SignUp = () =>  {
             <Text style={{color:'white',fontSize:14}}>Sign Up</Text>
           </View>
         </TouchableHighlight>
+        <Button title='Have Account?' onPress={()=>navigation.navigate('Login')}/>
       </View>
     </View>
   );
